@@ -3,3 +3,4 @@ dist/
 *.mjs
 .env
 .env.*
+output/

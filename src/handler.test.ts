@@ -2,10 +2,12 @@ import { describe, expect, it } from "vitest";
 import { handler } from "./handler.js";
 
 describe("handler", () => {
-  it("returns 200 with ok message", async () => {
+  it("returns 400 when dates are missing", async () => {
     const response = await handler({});
 
-    expect(response.statusCode).toBe(200);
-    expect(JSON.parse(response.body)).toEqual({ message: "ok" });
+    expect(response.statusCode).toBe(400);
+    expect(JSON.parse(response.body)).toEqual({
+      error: "dateFrom and dateTo are required (YYYY-MM-DD)",
+    });
   });
 });
