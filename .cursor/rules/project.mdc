@@ -1,0 +1,24 @@
+---
+description: Project conventions and architecture
+alwaysApply: true
+---
+
+# Miniheadquarter Scraper
+
+TypeScript serverless project bundled with esbuild, targeting Node 20.
+
+## Stack
+
+- **Runtime**: Node 20 (serverless / Lambda-style handlers)
+- **Language**: TypeScript 5 with strict mode
+- **Bundler**: esbuild (ESM output)
+- **Testing**: vitest
+- **Linting**: eslint + typescript-eslint
+
+## Conventions
+
+- Use ESM (`import`/`export`), never CommonJS
+- All async functions return explicit types — no implicit `Promise<any>`
+- Prefer `unknown` over `any`; narrow with type guards
+- Keep handlers thin: extract logic into pure functions under `src/`
+- No classes unless truly needed; prefer plain functions and interfaces

@@ -1,0 +1,14 @@
+---
+description: TypeScript style rules
+globs: "**/*.ts"
+alwaysApply: false
+---
+
+# TypeScript Style
+
+- Use `const` by default; `let` only when reassignment is needed
+- Prefer `interface` over `type` for object shapes
+- Use `satisfies` for type-safe object literals when appropriate
+- Explicit return types on exported functions
+- Destructure parameters when 3+ fields
+- Errors: always wrap in typed custom errors, never swallow silently
